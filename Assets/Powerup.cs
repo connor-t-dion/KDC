@@ -18,8 +18,10 @@ public class Powerup : MonoBehaviour
     //Power value
     private float powerAmount = 0.0f;
     //Bar speed
-    private float powerSpeed = 40.0f;
-    
+    private float powerSpeed = 160.0f;
+    //Final Power value
+    public float powerFinAmount = 0.0f;
+
     // Update is called once per frame
     void Update()
     {
@@ -66,7 +68,13 @@ public class Powerup : MonoBehaviour
     {
         isPowerUp = false;
         textPowerAmount.text = powerAmount.ToString("F0");
+        powerFinAmount = powerAmount;
 
+    }
+
+    public bool GetIfPowerUp()
+    {
+        return isPowerUp;
     }
 
 }
