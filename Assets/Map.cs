@@ -32,7 +32,7 @@ public class Map : MonoBehaviour
         int pos_x = (int) Random.Range(1f, MapSize - 1);
         int pos_y = (int) Random.Range(1f, MapSize - 1);
 
-        Vector3 pos2 = new Vector3(pos_x*2.4f, 0, pos_y*2.4f);
+        Vector3 pos2 = new Vector3(pos_x*2.4f-.03f, 1.1f, pos_y*2.4f+1.28f);
         Destroy(BaseMap[pos_x, pos_y]);
         BaseMap[pos_x, pos_y] = Instantiate(Hole, pos2, Quaternion.identity);
         BaseMap[pos_x, pos_y].transform.Rotate(90.0f, 0.0f, 0.0f, Space.Self);
