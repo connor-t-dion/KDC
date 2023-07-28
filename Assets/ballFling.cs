@@ -25,8 +25,8 @@ public class ballFling : MonoBehaviour
     {
         if (fire == true)
         {
-            rb.AddForce(new Vector3(0, ForceY*power/100, ForceZ * power / 100), ForceMode.VelocityChange);
-            rb.AddTorque(new Vector3(ForceT * (spin/100 - 0.5f), 0, 0), ForceMode.Impulse);
+            rb.AddForce(new Vector3(0, ForceY*power, ForceZ * power), ForceMode.VelocityChange);
+            rb.AddTorque(new Vector3(ForceT * (spin - 0.5f), 0, 0), ForceMode.Impulse);
 
             fire = false;
         }
@@ -34,12 +34,12 @@ public class ballFling : MonoBehaviour
 
     public void SetPower(float pow)
     {
-        power = pow;
+        power = pow / 100;
     }
 
     public void SetSpin(float sp)
     {
-        spin = sp;
+        spin = sp / 100;
     }
 
     public void ReadyToFire()
